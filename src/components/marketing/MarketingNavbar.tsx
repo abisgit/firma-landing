@@ -62,7 +62,7 @@ export default function MarketingNavbar() {
                 {/* Actions */}
                 <div className="hidden lg:flex items-center gap-4">
                     <Link href={`${frontendUrl}/login`} className="text-sm font-bold text-[#1a365d] hover:text-[#2c5282]">Log In</Link>
-                    <Link href={`${frontendUrl}/register`} className="bg-[#1a365d] text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-[#2c5282] transition-all shadow-lg shadow-blue-900/20 active:scale-95">Get Started</Link>
+                    <Link href="/register-choice" className="bg-[#1a365d] text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-[#2c5282] transition-all shadow-lg shadow-blue-900/20 active:scale-95">Get Started</Link>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -80,7 +80,7 @@ export default function MarketingNavbar() {
                         ))}
                         <div className="pt-4 border-t border-gray-100 flex flex-col gap-4">
                             <Link href={`${frontendUrl}/login`} className="text-center font-bold text-[#1a365d]">Log In</Link>
-                            <Link href={`${frontendUrl}/register`} className="bg-[#1a365d] text-white text-center py-3 rounded-xl font-bold">Get Started</Link>
+                            <Link href="/register-choice" className="bg-[#1a365d] text-white text-center py-3 rounded-xl font-bold">Get Started</Link>
                         </div>
                     </div>
                 </div>
