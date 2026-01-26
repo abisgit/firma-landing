@@ -48,14 +48,14 @@ export default function MarketingNavbar() {
                     <div className="p-2.5 bg-[#1a365d] rounded-xl transition-all group-hover:scale-110 shadow-lg shadow-blue-900/20">
                         <Shield className="w-6 h-6 text-white" />
                     </div>
-                    <span className={`text-2xl font-black tracking-tighter text-[#1a365d]`}>FIRMA</span>
+                    <span className={`text-2xl font-extrabold tracking-tighter text-[#1a365d]`}>FIRMA</span>
                 </Link>
 
                 {/* Desktop Nav */}
                 <div className="hidden lg:flex items-center gap-2">
                     {/* Products Dropdown */}
                     <div className="relative group" onMouseEnter={() => setActiveDropdown('products')} onMouseLeave={() => setActiveDropdown(null)}>
-                        <button className={`flex items-center gap-1.5 px-4 py-2 text-sm font-black uppercase tracking-widest transition-all rounded-full ${isScrolled ? 'text-gray-600 hover:bg-gray-100 hover:text-[#1a365d]' : 'text-[#1a365d] hover:bg-white/10 hover:text-white'}`}>
+                        <button className={`flex items-center gap-1.5 px-4 py-2 text-sm font-extrabold uppercase tracking-widest transition-all rounded-full ${isScrolled ? 'text-gray-600 hover:bg-gray-100 hover:text-[#1a365d]' : 'text-[#1a365d] hover:bg-white/10 hover:text-white'}`}>
                             Products
                             <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === 'products' ? 'rotate-180' : ''}`} />
                         </button>
@@ -66,7 +66,7 @@ export default function MarketingNavbar() {
                                         <item.icon className="w-6 h-6 text-[#1a365d] group-hover/item:text-white" />
                                     </div>
                                     <div className="space-y-1">
-                                        <h4 className="font-black text-[#1a365d] text-sm uppercase tracking-wide">{item.title}</h4>
+                                        <h4 className="font-extrabold text-[#1a365d] text-sm uppercase tracking-wide">{item.title}</h4>
                                         <p className="text-xs text-gray-500 leading-relaxed font-medium">{item.desc}</p>
                                     </div>
                                 </Link>
@@ -76,7 +76,7 @@ export default function MarketingNavbar() {
 
                     {/* Solutions Dropdown */}
                     <div className="relative group" onMouseEnter={() => setActiveDropdown('solutions')} onMouseLeave={() => setActiveDropdown(null)}>
-                        <button className={`flex items-center gap-1.5 px-4 py-2 text-sm font-black uppercase tracking-widest transition-all rounded-full ${isScrolled ? 'text-gray-600 hover:bg-gray-100 hover:text-[#1a365d]' : 'text-[#1a365d] hover:bg-white/10 hover:text-white'}`}>
+                        <button className={`flex items-center gap-1.5 px-4 py-2 text-sm font-extrabold uppercase tracking-widest transition-all rounded-full ${isScrolled ? 'text-gray-600 hover:bg-gray-100 hover:text-[#1a365d]' : 'text-[#1a365d] hover:bg-white/10 hover:text-white'}`}>
                             Solutions
                             <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === 'solutions' ? 'rotate-180' : ''}`} />
                         </button>
@@ -87,7 +87,7 @@ export default function MarketingNavbar() {
                                         <item.icon className="w-6 h-6 text-[#1a365d] group-hover/item:text-white" />
                                     </div>
                                     <div className="space-y-1">
-                                        <h4 className="font-black text-[#1a365d] text-sm uppercase tracking-wide">{item.title}</h4>
+                                        <h4 className="font-extrabold text-[#1a365d] text-sm uppercase tracking-wide">{item.title}</h4>
                                         <p className="text-xs text-gray-500 leading-relaxed font-medium">{item.desc}</p>
                                     </div>
                                 </Link>
@@ -96,18 +96,18 @@ export default function MarketingNavbar() {
                     </div>
 
                     {/* Simple Links */}
-                    <Link href="#" className={`px-4 py-2 text-sm font-black uppercase tracking-widest transition-all rounded-full ${isScrolled ? 'text-gray-600 hover:bg-gray-100 hover:text-[#1a365d]' : 'text-[#1a365d] hover:bg-white/10 hover:text-white'}`}>
+                    <Link href="#" className={`px-4 py-2 text-sm font-extrabold uppercase tracking-widest transition-all rounded-full ${isScrolled ? 'text-gray-600 hover:bg-gray-100 hover:text-[#1a365d]' : 'text-[#1a365d] hover:bg-white/10 hover:text-white'}`}>
                         Enterprise
                     </Link>
-                    <Link href="#" className={`px-4 py-2 text-sm font-black uppercase tracking-widest transition-all rounded-full ${isScrolled ? 'text-gray-600 hover:bg-gray-100 hover:text-[#1a365d]' : 'text-[#1a365d] hover:bg-white/10 hover:text-white'}`}>
+                    <Link href="#" className={`px-4 py-2 text-sm font-extrabold uppercase tracking-widest transition-all rounded-full ${isScrolled ? 'text-gray-600 hover:bg-gray-100 hover:text-[#1a365d]' : 'text-[#1a365d] hover:bg-white/10 hover:text-white'}`}>
                         Plans & Pricing
                     </Link>
                 </div>
 
                 {/* Actions */}
                 <div className="hidden lg:flex items-center gap-6">
-                    <Link href={`${frontendUrl}/login`} className={`text-sm font-black uppercase tracking-widest transition-colors ${isScrolled ? 'text-[#1a365d]' : 'text-[#1a365d] hover:text-[#2c5282]'}`}>Log In</Link>
-                    <Link href="/register-choice" className="bg-[#1a365d] text-white px-8 py-3.5 rounded-2xl text-[11px] font-black uppercase tracking-[2px] hover:bg-[#2c5282] transition-all shadow-xl shadow-blue-900/20 active:scale-95">Get Started</Link>
+                    <Link href={`${frontendUrl}/login`} className={`text-sm font-extrabold uppercase tracking-widest transition-colors ${isScrolled ? 'text-[#1a365d]' : 'text-[#1a365d] hover:text-[#2c5282]'}`}>Log In</Link>
+                    <Link href="/register-choice" className="bg-[#1a365d] text-white px-8 py-3.5 rounded-2xl text-[11px] font-extrabold uppercase tracking-[2px] hover:bg-[#2c5282] transition-all shadow-xl shadow-blue-900/20 active:scale-95">Get Started</Link>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -120,13 +120,13 @@ export default function MarketingNavbar() {
             {mobileMenuOpen && (
                 <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-2xl animate-in slide-in-from-top duration-300">
                     <div className="p-8 space-y-6">
-                        <Link href="#" className="block text-lg font-black text-[#1a365d] uppercase tracking-widest">Products</Link>
-                        <Link href="#" className="block text-lg font-black text-[#1a365d] uppercase tracking-widest">Solutions</Link>
-                        <Link href="#" className="block text-lg font-black text-[#1a365d] uppercase tracking-widest">Enterprise</Link>
+                        <Link href="#" className="block text-lg font-extrabold text-[#1a365d] uppercase tracking-widest">Products</Link>
+                        <Link href="#" className="block text-lg font-extrabold text-[#1a365d] uppercase tracking-widest">Solutions</Link>
+                        <Link href="#" className="block text-lg font-extrabold text-[#1a365d] uppercase tracking-widest">Enterprise</Link>
                         <hr className="border-gray-100" />
                         <div className="flex flex-col gap-4">
-                            <Link href={`${frontendUrl}/login`} className="text-center font-black text-[#1a365d] uppercase tracking-widest py-4 bg-gray-50 rounded-2xl">Log In</Link>
-                            <Link href="/register-choice" className="bg-[#1a365d] text-white text-center py-5 rounded-[24px] font-black uppercase tracking-[2px]">Get Started</Link>
+                            <Link href={`${frontendUrl}/login`} className="text-center font-extrabold text-[#1a365d] uppercase tracking-widest py-4 bg-gray-50 rounded-2xl">Log In</Link>
+                            <Link href="/register-choice" className="bg-[#1a365d] text-white text-center py-5 rounded-[24px] font-extrabold uppercase tracking-[2px]">Get Started</Link>
                         </div>
                     </div>
                 </div>
