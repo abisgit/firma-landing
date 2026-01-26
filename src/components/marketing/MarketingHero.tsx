@@ -4,76 +4,72 @@ import Link from 'next/link';
 import { PlayCircle, ShieldCheck, ArrowRight } from 'lucide-react';
 
 export default function MarketingHero({
-    title = "IAM for everyone in your organization.",
-    description = "The market leader trusted by 1.7 million customers. Manage your official correspondence with the security and efficiency of FIRMA's Intelligent Agreement Management."
+    title = "Sovereign Agreement Management.",
+    description = "Empowering government institutions with cryptographically secure digital lettering, hierarchical approvals, and immutable verification."
 }: { title?: string, description?: string }) {
     const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3000';
 
     return (
-        <section className="relative pt-32 pb-20 overflow-hidden min-h-screen flex items-center">
-            {/* Background Decorations */}
-            <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-primary/5 to-transparent -z-10" />
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent/10 rounded-full blur-3xl -z-10 animate-pulse" />
-
-            <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="space-y-8 animate-in fade-in slide-in-from-left duration-1000">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest">
-                        <ShieldCheck className="w-4 h-4" />
-                        Next-Gen Digital Lettering
+        <section className="relative pt-40 pb-24 overflow-hidden min-h-[90vh] flex items-center bg-white">
+            <div className="container mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div className="space-y-10 animate-in fade-in slide-in-from-left duration-1000">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1a365d]/5 border border-[#1a365d]/10 text-[#1a365d] text-[10px] font-black uppercase tracking-[3px]">
+                        <ShieldCheck className="w-3.5 h-3.5" />
+                        National Security Protocol
                     </div>
 
-                    <h1 className="text-6xl lg:text-7xl font-black text-primary leading-none tracking-tighter">
+                    <h1 className="text-5xl lg:text-6xl font-extrabold text-[#1a365d] leading-[1.1] tracking-tight">
                         {title}
                     </h1>
 
-                    <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
+                    <p className="text-lg lg:text-xl text-gray-500 leading-relaxed max-w-xl font-medium">
                         {description}
                     </p>
 
-                    <div className="flex flex-wrap gap-4 pt-4">
-                        <Link href={`${frontendUrl}/register`} className="bg-primary text-white px-8 py-4 rounded-full text-lg font-black hover:bg-secondary transition-all shadow-xl shadow-primary/20 flex items-center gap-2 group">
-                            Learn More
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <div className="flex flex-wrap gap-6 pt-4">
+                        <Link href="/request-access" className="bg-[#1a365d] text-white px-10 py-5 rounded-[24px] text-xs font-black uppercase tracking-[3px] hover:bg-[#2c5282] transition-all shadow-2xl shadow-blue-900/40 flex items-center gap-3 group">
+                            Start Access Request
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                         </Link>
-                        <button className="flex items-center gap-3 px-8 py-4 rounded-full text-lg font-bold text-primary hover:bg-primary/5 transition-all">
-                            <PlayCircle className="w-6 h-6" />
-                            Watch Demo
+                        <button className="flex items-center gap-4 px-10 py-5 rounded-[24px] text-xs font-black uppercase tracking-[3px] text-[#1a365d] hover:bg-[#1a365d]/5 transition-all border-2 border-[#1a365d]/10">
+                            <PlayCircle className="w-5 h-5" />
+                            Technical Overview
                         </button>
                     </div>
 
-                    <div className="pt-8 flex items-center gap-8 opacity-50">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-4 grayscale hover:grayscale-0 transition-all cursor-pointer" />
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" className="h-4 grayscale hover:grayscale-0 transition-all cursor-pointer" />
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Apple_logo_grey.svg" alt="Apple" className="h-6 grayscale hover:grayscale-0 transition-all cursor-pointer" />
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="h-5 grayscale hover:grayscale-0 transition-all cursor-pointer" />
+                    <div className="pt-12 flex items-center gap-10 opacity-20 grayscale">
+                        <span className="font-black text-xl tracking-tighter">MINISTRY_OF_FINANCE</span>
+                        <span className="font-black text-xl tracking-tighter">GOV_TECH_LABS</span>
+                        <span className="font-black text-xl tracking-tighter">FEDERAL_LEDGER</span>
                     </div>
                 </div>
 
                 <div className="relative animate-in zoom-in fade-in duration-1000 delay-300">
-                    <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-white/20 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <div className="relative z-10 rounded-[60px] overflow-hidden shadow-[0_50px_100px_-20px_rgba(26,54,93,0.3)] border-8 border-white group">
                         <img
-                            src="/firma_hero_background.png"
-                            alt="Firma Hero"
-                            className="w-full h-auto"
+                            src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=1200"
+                            alt="Government Digital Infrastructure"
+                            className="w-full h-[600px] object-cover group-hover:scale-110 transition-transform duration-1000"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
+                        <div className="absolute inset-0 bg-[#1a365d]/20 mix-blend-multiply" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1a365d] to-transparent opacity-60" />
 
                         {/* Floating elements */}
-                        <div className="absolute top-10 -left-10 bg-white p-4 rounded-2xl shadow-2xl animate-bounce duration-3000 border border-border">
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center">
-                                    <ShieldCheck className="w-6 h-6 text-white" />
+                        <div className="absolute bottom-10 left-10 right-10 bg-white/10 backdrop-blur-2xl p-8 rounded-[40px] border border-white/20 shadow-2xl space-y-4">
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-500/50">
+                                    <ShieldCheck className="w-7 h-7 text-white" />
                                 </div>
-                                <div>
-                                    <p className="text-[10px] font-bold text-muted-foreground uppercase">Verified</p>
-                                    <p className="text-sm font-black text-primary">Document Secured</p>
+                                <div className="space-y-0.5">
+                                    <p className="text-[10px] font-black text-emerald-400 uppercase tracking-widest leading-none">Security Verified</p>
+                                    <p className="text-lg font-black text-white leading-none uppercase tracking-tight font-mono">Status: SECURED</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* Background blob */}
-                    <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/20 rounded-full blur-3xl -z-10" />
+                    {/* Background decorations */}
+                    <div className="absolute -top-20 -right-20 w-80 h-80 bg-blue-100 rounded-full blur-[120px] -z-10 group-hover:bg-blue-200 transition-colors" />
                 </div>
             </div>
         </section>

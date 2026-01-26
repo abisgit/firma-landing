@@ -2,13 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Shield, Menu, X, ChevronDown } from 'lucide-react';
+import { Shield, Menu, X, ChevronDown, Zap, ShieldCheck, Cpu, Building2, Landmark, Globe, FileText, Users, CreditCard, LifeBuoy, BookOpen, Newspaper } from 'lucide-react';
 
 export default function MarketingNavbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
-    // In a real separate project, these would point to the frontend app URL
     const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3000';
 
     useEffect(() => {
@@ -19,50 +19,95 @@ export default function MarketingNavbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const navLinks = [
-        { name: 'Products', href: '#', hasDropdown: true },
-        { name: 'Solutions', href: '#', hasDropdown: true },
-        { name: 'Resources', href: '#', hasDropdown: true },
-        { name: 'Enterprise', href: '#', hasDropdown: false },
-        { name: 'Plans & Pricing', href: '#', hasDropdown: false },
-    ];
+    const sections = {
+        Products: [
+            { title: 'Digital Lettering', desc: 'Secure correspondence system for official gov letters.', icon: FileText, href: '#' },
+            { title: 'Public Ledger', desc: 'Immutable document verification on permissioned blockchain.', icon: ShieldCheck, href: '#' },
+            { title: 'Identity System', desc: 'PKI and LDAP integrated institutional identities.', icon: Users, href: '#' },
+            { title: 'Enterprise Hub', desc: 'Centralized management for SOEs and large entities.', icon: Cpu, href: '#' },
+        ],
+        Solutions: [
+            { title: 'Government & Public Sector', desc: 'Digitize your entire ministry workflow.', icon: Landmark, href: '#' },
+            { title: 'SOEs & Regulatory', desc: 'Secure communication with government agencies.', icon: Building2, href: '#' },
+            { title: 'National Infrastructure', desc: 'Digital Public Infrastructure (DPI) at scale.', icon: Globe, href: '#' },
+            { title: 'Smart Approvals', desc: 'Automated hierarchical clearance systems.', icon: Zap, href: '#' },
+        ],
+        Resources: [
+            { title: 'Documentation', desc: 'Integration guides and developer tools.', icon: BookOpen, href: '#' },
+            { title: 'National Case Studies', desc: 'How FIRMA transformed digital governance.', icon: Newspaper, href: '#' },
+            { title: 'Institutional Support', desc: 'Dedicated 24/7 support for public entities.', icon: LifeBuoy, href: '#' },
+            { title: 'Press & Media', desc: 'Latest updates from the FIRMA team.', icon: Globe, href: '#' },
+        ]
+    };
 
     return (
-        <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-4' : 'bg-transparent py-6'}`}>
+        <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-7'}`}>
             <div className="container mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 group">
-                    <div className="p-2 bg-[#1a365d] rounded-lg transition-transform group-hover:scale-110">
+                <Link href="/" className="flex items-center gap-3 group">
+                    <div className="p-2.5 bg-[#1a365d] rounded-xl transition-all group-hover:scale-110 shadow-lg shadow-blue-900/20">
                         <Shield className="w-6 h-6 text-white" />
                     </div>
                     <span className={`text-2xl font-black tracking-tighter text-[#1a365d]`}>FIRMA</span>
                 </Link>
 
                 {/* Desktop Nav */}
-                <div className="hidden lg:flex items-center gap-8">
-                    {navLinks.map((link) => (
-                        <div key={link.name} className="relative group">
-                            <button className={`flex items-center gap-1 text-sm font-semibold transition-colors ${isScrolled ? 'text-gray-600 hover:text-[#1a365d]' : 'text-[#1a365d] hover:text-[#2c5282]'}`}>
-                                {link.name}
-                                {link.hasDropdown && <ChevronDown className="w-4 h-4" />}
-                            </button>
-                            {link.hasDropdown && (
-                                <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform group-hover:translate-y-0 translate-y-2">
-                                    <div className="p-2">
-                                        <Link href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#1a365d] rounded-lg">Overview</Link>
-                                        <Link href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#1a365d] rounded-lg">Features</Link>
-                                        <Link href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#1a365d] rounded-lg">Security</Link>
+                <div className="hidden lg:flex items-center gap-2">
+                    {/* Products Dropdown */}
+                    <div className="relative group" onMouseEnter={() => setActiveDropdown('products')} onMouseLeave={() => setActiveDropdown(null)}>
+                        <button className={`flex items-center gap-1.5 px-4 py-2 text-sm font-black uppercase tracking-widest transition-all rounded-full ${isScrolled ? 'text-gray-600 hover:bg-gray-100 hover:text-[#1a365d]' : 'text-[#1a365d] hover:bg-white/10 hover:text-white'}`}>
+                            Products
+                            <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === 'products' ? 'rotate-180' : ''}`} />
+                        </button>
+                        <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-[32px] border border-gray-100 p-8 grid grid-cols-2 gap-6 transition-all duration-300 origin-top ${activeDropdown === 'products' ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-95 -translate-y-4 invisible'}`}>
+                            {sections.Products.map((item) => (
+                                <Link key={item.title} href={item.href} className="group/item flex gap-4 p-4 rounded-2xl hover:bg-[#1a365d]/5 transition-all">
+                                    <div className="w-12 h-12 bg-[#1a365d]/5 rounded-xl flex items-center justify-center shrink-0 group-hover/item:bg-[#1a365d] group-hover/item:text-white transition-all">
+                                        <item.icon className="w-6 h-6 text-[#1a365d] group-hover/item:text-white" />
                                     </div>
-                                </div>
-                            )}
+                                    <div className="space-y-1">
+                                        <h4 className="font-black text-[#1a365d] text-sm uppercase tracking-wide">{item.title}</h4>
+                                        <p className="text-xs text-gray-500 leading-relaxed font-medium">{item.desc}</p>
+                                    </div>
+                                </Link>
+                            ))}
                         </div>
-                    ))}
+                    </div>
+
+                    {/* Solutions Dropdown */}
+                    <div className="relative group" onMouseEnter={() => setActiveDropdown('solutions')} onMouseLeave={() => setActiveDropdown(null)}>
+                        <button className={`flex items-center gap-1.5 px-4 py-2 text-sm font-black uppercase tracking-widest transition-all rounded-full ${isScrolled ? 'text-gray-600 hover:bg-gray-100 hover:text-[#1a365d]' : 'text-[#1a365d] hover:bg-white/10 hover:text-white'}`}>
+                            Solutions
+                            <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === 'solutions' ? 'rotate-180' : ''}`} />
+                        </button>
+                        <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-[32px] border border-gray-100 p-8 grid grid-cols-2 gap-6 transition-all duration-300 origin-top ${activeDropdown === 'solutions' ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-95 -translate-y-4 invisible'}`}>
+                            {sections.Solutions.map((item) => (
+                                <Link key={item.title} href={item.href} className="group/item flex gap-4 p-4 rounded-2xl hover:bg-[#1a365d]/5 transition-all">
+                                    <div className="w-12 h-12 bg-[#1a365d]/5 rounded-xl flex items-center justify-center shrink-0 group-hover/item:bg-[#1a365d] group-hover/item:text-white transition-all">
+                                        <item.icon className="w-6 h-6 text-[#1a365d] group-hover/item:text-white" />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <h4 className="font-black text-[#1a365d] text-sm uppercase tracking-wide">{item.title}</h4>
+                                        <p className="text-xs text-gray-500 leading-relaxed font-medium">{item.desc}</p>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Simple Links */}
+                    <Link href="#" className={`px-4 py-2 text-sm font-black uppercase tracking-widest transition-all rounded-full ${isScrolled ? 'text-gray-600 hover:bg-gray-100 hover:text-[#1a365d]' : 'text-[#1a365d] hover:bg-white/10 hover:text-white'}`}>
+                        Enterprise
+                    </Link>
+                    <Link href="#" className={`px-4 py-2 text-sm font-black uppercase tracking-widest transition-all rounded-full ${isScrolled ? 'text-gray-600 hover:bg-gray-100 hover:text-[#1a365d]' : 'text-[#1a365d] hover:bg-white/10 hover:text-white'}`}>
+                        Plans & Pricing
+                    </Link>
                 </div>
 
                 {/* Actions */}
-                <div className="hidden lg:flex items-center gap-4">
-                    <Link href={`${frontendUrl}/login`} className="text-sm font-bold text-[#1a365d] hover:text-[#2c5282]">Log In</Link>
-                    <Link href="/register-choice" className="bg-[#1a365d] text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-[#2c5282] transition-all shadow-lg shadow-blue-900/20 active:scale-95">Get Started</Link>
+                <div className="hidden lg:flex items-center gap-6">
+                    <Link href={`${frontendUrl}/login`} className={`text-sm font-black uppercase tracking-widest transition-colors ${isScrolled ? 'text-[#1a365d]' : 'text-[#1a365d] hover:text-[#2c5282]'}`}>Log In</Link>
+                    <Link href="/register-choice" className="bg-[#1a365d] text-white px-8 py-3.5 rounded-2xl text-[11px] font-black uppercase tracking-[2px] hover:bg-[#2c5282] transition-all shadow-xl shadow-blue-900/20 active:scale-95">Get Started</Link>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -74,13 +119,14 @@ export default function MarketingNavbar() {
             {/* Mobile Menu */}
             {mobileMenuOpen && (
                 <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-2xl animate-in slide-in-from-top duration-300">
-                    <div className="p-6 space-y-4">
-                        {navLinks.map((link) => (
-                            <Link key={link.name} href="#" className="block text-lg font-bold text-gray-600 hover:text-[#1a365d]">{link.name}</Link>
-                        ))}
-                        <div className="pt-4 border-t border-gray-100 flex flex-col gap-4">
-                            <Link href={`${frontendUrl}/login`} className="text-center font-bold text-[#1a365d]">Log In</Link>
-                            <Link href="/register-choice" className="bg-[#1a365d] text-white text-center py-3 rounded-xl font-bold">Get Started</Link>
+                    <div className="p-8 space-y-6">
+                        <Link href="#" className="block text-lg font-black text-[#1a365d] uppercase tracking-widest">Products</Link>
+                        <Link href="#" className="block text-lg font-black text-[#1a365d] uppercase tracking-widest">Solutions</Link>
+                        <Link href="#" className="block text-lg font-black text-[#1a365d] uppercase tracking-widest">Enterprise</Link>
+                        <hr className="border-gray-100" />
+                        <div className="flex flex-col gap-4">
+                            <Link href={`${frontendUrl}/login`} className="text-center font-black text-[#1a365d] uppercase tracking-widest py-4 bg-gray-50 rounded-2xl">Log In</Link>
+                            <Link href="/register-choice" className="bg-[#1a365d] text-white text-center py-5 rounded-[24px] font-black uppercase tracking-[2px]">Get Started</Link>
                         </div>
                     </div>
                 </div>

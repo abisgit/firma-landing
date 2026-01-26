@@ -1,32 +1,45 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MarketingNavbar from '@/components/marketing/MarketingNavbar';
 import MarketingFooter from '@/components/marketing/MarketingFooter';
 import api from '@/lib/api';
 import { Search, ShieldCheck, XCircle, FileText, Calendar, User, Building2 } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
 
 export default function VerificationPage() {
-    const [ref, setRef] = useState('');
+    const searchParams = useSearchParams();
+    const initialRef = searchParams.get('ref') || '';
+
+    const [ref, setRef] = useState(initialRef);
     const [result, setResult] = useState<any>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
-    const handleVerify = async (e: React.FormEvent) => {
-        e.preventDefault();
+    useEffect(() => {
+        if (initialRef) {
+            performVerification(initialRef);
+        }
+    }, [initialRef]);
+
+    const performVerification = async (searchRef: string) => {
         setLoading(true);
         setError('');
         setResult(null);
 
         try {
-            // Updated endpoint to search by reference number
-            const res = await api.get(`/letters/verify/${ref}`);
+            const res = await api.get(`/letters/verify/${searchRef}`);
             setResult(res.data);
         } catch (err: any) {
             setError(err.response?.status === 404 ? 'Document not found. Please check the reference number and try again.' : 'An error occurred during verification.');
         } finally {
             setLoading(false);
         }
+    };
+
+    const handleVerify = async (e: React.FormEvent) => {
+        e.preventDefault();
+        performVerification(ref);
     };
 
     return (
