@@ -16,7 +16,7 @@ export default function Home() {
   const [verifyRef, setVerifyRef] = useState('');
   const router = useRouter();
 
-  const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3000';
+  const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL;
 
   useEffect(() => {
     // Fetch generic marketing content

@@ -6,7 +6,7 @@ import { User, Landmark, ShieldCheck, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default function RegisterChoicePage() {
-    const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3000';
+    const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL;
 
     return (
         <div className="min-h-screen bg-white">

@@ -7,7 +7,7 @@ export default function MarketingHero({
     title = "Sovereign Agreement Management.",
     description = "Empowering government institutions with cryptographically secure digital lettering, hierarchical approvals, and immutable verification."
 }: { title?: string, description?: string }) {
-    const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3000';
+    const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL;
 
     return (
         <section className="relative pt-40 pb-24 overflow-hidden min-h-[90vh] flex items-center bg-white">

@@ -9,7 +9,7 @@ export default function MarketingNavbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
-    const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3000';
+    const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL;
 
     useEffect(() => {
         const handleScroll = () => {
