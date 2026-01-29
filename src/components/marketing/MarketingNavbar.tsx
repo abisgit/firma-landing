@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Shield, Menu, X, ChevronDown, Zap, ShieldCheck, Cpu, Building2, Landmark, Globe, FileText, Users, CreditCard, LifeBuoy, BookOpen, Newspaper } from 'lucide-react';
+import { Shield, Menu, X, ChevronDown, Zap, ShieldCheck, Cpu, Building2, Landmark, Globe, FileText, Users, CreditCard, LifeBuoy, BookOpen, Newspaper, Stethoscope, GraduationCap, Scale, Briefcase } from 'lucide-react';
 
 export default function MarketingNavbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -31,6 +31,10 @@ export default function MarketingNavbar() {
             { title: 'SOEs & Regulatory', desc: 'Secure communication with government agencies.', icon: Building2, href: '#' },
             { title: 'National Infrastructure', desc: 'Digital Public Infrastructure (DPI) at scale.', icon: Globe, href: '#' },
             { title: 'Smart Approvals', desc: 'Automated hierarchical clearance systems.', icon: Zap, href: '#' },
+            { title: 'Healthcare', desc: 'Secure patient records and inter-hospital communication.', icon: Stethoscope, href: '#' },
+            { title: 'Education', desc: 'Digital certificates and academic record verification.', icon: GraduationCap, href: '#' },
+            { title: 'Legal', desc: 'Tamper-proof court documents and case files.', icon: Scale, href: '#' },
+            { title: 'Financial Services', desc: 'Secure transaction records and audit trails.', icon: Briefcase, href: '#' },
         ],
         Resources: [
             { title: 'Documentation', desc: 'Integration guides and developer tools.', icon: BookOpen, href: '#' },
