@@ -108,6 +108,7 @@ export default function RequestAccessPage() {
                                     <option value="SOE">State-Owned Enterprise</option>
                                     <option value="ENTERPRISE">Regulated Enterprise</option>
                                     <option value="REGION">Regional Administration</option>
+                                    <option value="EDUCATION">Education</option>
                                 </select>
                             </div>
 
