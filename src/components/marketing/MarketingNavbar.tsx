@@ -45,8 +45,8 @@ export default function MarketingNavbar() {
     };
 
     return (
-        <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-7'}`}>
-            <div className="container mx-auto px-6 flex items-center justify-between">
+        <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-7'}`} suppressHydrationWarning>
+            <div className="container mx-auto px-6 flex items-center justify-between" suppressHydrationWarning>
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-3 group">
                     <div className="p-2.5 bg-[#1a365d] rounded-xl transition-all group-hover:scale-110 shadow-lg shadow-blue-900/20">

@@ -39,7 +39,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-white selection:bg-[#1a365d] selection:text-white">
+    <div className="bg-white selection:bg-[#1a365d] selection:text-white" suppressHydrationWarning>
       <MarketingNavbar />
 
       {/* Hero Section */}

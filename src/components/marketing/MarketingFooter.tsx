@@ -36,7 +36,7 @@ export default function MarketingFooter() {
 
     return (
         <footer className="bg-[#1a365d] pt-32 pb-12 text-white border-t border-white/5">
-            <div className="container mx-auto px-10">
+            <div className="container mx-auto px-10" suppressHydrationWarning>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-20 mb-24">
                     {/* Brand Section */}
                     <div className="lg:col-span-2 space-y-10">
@@ -58,7 +58,7 @@ export default function MarketingFooter() {
 
                     {/* Links Sections */}
                     {footerSections.map((section) => (
-                        <div key={section.title} className="space-y-8">
+                        <div key={section.title} className="space-y-8" suppressHydrationWarning>
                             <h4 className="text-sm font-black uppercase tracking-[3px] text-white/30">{section.title}</h4>
                             <ul className="space-y-4">
                                 {section.links.map((link) => (
@@ -71,9 +71,9 @@ export default function MarketingFooter() {
                     ))}
                 </div>
 
-                <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-[11px] font-black uppercase tracking-[2px] text-white/20">
+                <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-[11px] font-black uppercase tracking-[2px] text-white/20" suppressHydrationWarning>
                     <p>© 2026 FIRMA NATIONAL PROTOCOL. ALL RIGHTS RESERVED.</p>
-                    <div className="flex flex-wrap items-center gap-8">
+                    <div className="flex flex-wrap items-center gap-8" suppressHydrationWarning>
                         <Link href="#" className="hover:text-white transition-colors">Digital Governance Law</Link>
                         <Link href="#" className="hover:text-white transition-colors">Sovereignty Compliance</Link>
                         <Link href="#" className="hover:text-white transition-colors">Transparency Registry</Link>
