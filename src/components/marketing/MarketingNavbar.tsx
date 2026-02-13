@@ -9,7 +9,7 @@ export default function MarketingNavbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
-    const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL;
+    const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://firmadashboard.ptgr.io';
 
     useEffect(() => {
         const handleScroll = () => {

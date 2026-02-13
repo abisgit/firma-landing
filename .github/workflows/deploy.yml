@@ -36,6 +36,9 @@ jobs:
           tags: |
             ${{ env.FRONTEND_IMAGE }}:${{ env.DOCKER_TAG }}
             ${{ env.FRONTEND_IMAGE }}:latest
+          build-args: |
+            NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}
+            NEXT_PUBLIC_FRONTEND_URL=${{ secrets.NEXT_PUBLIC_FRONTEND_URL }}
           no-cache: true
           pull: true
 

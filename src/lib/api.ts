@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const getBaseURL = () => {
-    const url = process.env.NEXT_PUBLIC_API_URL;
-    if (!url) return '';
+    const url = process.env.NEXT_PUBLIC_API_URL || 'https://firma-backend-vnj8.onrender.com';
     return url.endsWith('/') ? url.slice(0, -1) : url;
 };
 

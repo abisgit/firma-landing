@@ -16,7 +16,7 @@ export default function Home() {
   const [verifyRef, setVerifyRef] = useState('');
   const router = useRouter();
 
-  const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL;
+  const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://firmadashboard.ptgr.io';
 
   useEffect(() => {
     // Fetch generic marketing content
