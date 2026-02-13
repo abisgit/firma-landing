@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
+
 export default function MarketingFeatures() {
     const departments = [
         { name: 'Sales', icon: Zap, desc: 'Accelerate deal cycles with digital signatures.' },
