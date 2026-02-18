@@ -6,7 +6,7 @@ import { User, Landmark, ShieldCheck, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default function RegisterChoicePage() {
-    const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://firmadashboard.ptgr.io';
+    const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://dashboard.firmasafe.com';
 
     return (
         <div className="min-h-screen bg-white">

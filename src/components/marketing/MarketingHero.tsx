@@ -7,7 +7,7 @@ export default function MarketingHero({
     title = "Sovereign Agreement Management.",
     description = "Empowering government institutions with cryptographically secure digital lettering, hierarchical approvals, and immutable verification."
 }: { title?: string, description?: string }) {
-    const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://firmadashboard.ptgr.io';
+    const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://dashboard.firmasafe.com';
 
     return (
         <section className="relative pt-40 pb-24 overflow-hidden min-h-[90vh] flex items-center bg-white">
