@@ -84,13 +84,12 @@ export default function RequestAccessPage() {
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-xs font-black uppercase text-gray-400 tracking-widest">Organization Code / ID</label>
+                                <label className="text-xs font-black uppercase text-gray-400 tracking-widest">Organization Code / ID (Optional)</label>
                                 <input
                                     type="text"
-                                    required
                                     value={formData.orgCode}
                                     onChange={e => setFormData({ ...formData, orgCode: e.target.value })}
-                                    placeholder="e.g. MOF-ET"
+                                    placeholder="e.g. MOF-ET (Leave blank to auto-generate)"
                                     className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl focus:ring-2 focus:ring-[#1a365d] outline-none"
                                 />
                             </div>
