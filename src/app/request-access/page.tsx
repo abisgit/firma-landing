@@ -109,6 +109,10 @@ export default function RequestAccessPage() {
                                     <option value="ENTERPRISE">Regulated Enterprise</option>
                                     <option value="REGION">Regional Administration</option>
                                     <option value="EDUCATION">Education</option>
+                                    <option value="HEALTHCARE">Healthcare</option>
+                                    <option value="LEGAL">Legal</option>
+                                    <option value="FINANCE">Financial Services</option>
+                                    <option value="OTHER">Custom Dashboard</option>
                                 </select>
                             </div>
 
