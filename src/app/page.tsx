@@ -168,7 +168,7 @@ export default function Home() {
             </p>
             <div className="grid grid-cols-2 gap-10">
               <div className="space-y-2">
-                <p className="text-4xl font-extrabold text-[#1a365d]">1.7M+</p>
+                <p className="text-4xl font-extrabold text-[#1a365d]">17+</p>
                 <p className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest">Secured Docs</p>
               </div>
               <div className="space-y-2 border-l border-gray-200 pl-10">
