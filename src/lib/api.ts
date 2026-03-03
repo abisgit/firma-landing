@@ -2,6 +2,8 @@ import axios from 'axios';
 
 const getBaseURL = () => {
     const url = process.env.NEXT_PUBLIC_API_URL || 'https://api.firmasafe.com';
+    // const url = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/';
+
     return url.endsWith('/') ? url.slice(0, -1) : url;
 };
 
