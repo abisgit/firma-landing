@@ -243,7 +243,7 @@ export default function Home() {
               <h4 className="text-xs font-extrabold text-gray-400 uppercase tracking-[3px]">Tier 01</h4>
               <div className="space-y-2">
                 <h3 className="text-3xl font-extrabold text-[#1a365d] uppercase tracking-tighter">Pilot / Starter</h3>
-                <p className="text-sm font-bold text-blue-600">$25k – $50k / year</p>
+                <p className="text-sm font-bold text-blue-600">12,000 Birr – 18,000 Birr / year</p>
               </div>
               <p className="text-[10px] bg-[#1a365d]/5 text-[#1a365d] px-3 py-1 rounded-full inline-block font-extrabold uppercase">One Ministry / Agency</p>
               <ul className="space-y-4">
@@ -260,7 +260,7 @@ export default function Home() {
                 <h4 className="text-xs font-extrabold opacity-30 uppercase tracking-[3px]">Tier 02</h4>
                 <div className="space-y-2">
                   <h3 className="text-4xl font-extrabold uppercase tracking-tighter">Consortium</h3>
-                  <p className="text-sm font-bold text-emerald-400 font-mono">$75k – $150k / year</p>
+                  <p className="text-sm font-bold text-emerald-400 font-mono">24,000 Birr – 30,000 Birr / year</p>
                 </div>
                 <p className="text-[10px] bg-white/10 text-white px-3 py-1 rounded-full inline-block font-extrabold uppercase">Multiple Administrations</p>
                 <ul className="space-y-4">
@@ -276,7 +276,7 @@ export default function Home() {
               <h4 className="text-xs font-extrabold text-gray-400 uppercase tracking-[3px]">Tier 03</h4>
               <div className="space-y-2">
                 <h3 className="text-3xl font-extrabold text-[#1a365d] uppercase tracking-tighter">National</h3>
-                <p className="text-sm font-bold text-blue-600">$300k – $700k / year</p>
+                <p className="text-sm font-bold text-blue-600">42,000 Birr – 48,000 Birr / year</p>
               </div>
               <p className="text-[10px] bg-[#1a365d]/5 text-[#1a365d] px-3 py-1 rounded-full inline-block font-extrabold uppercase">Nationwide Infrastructure</p>
               <ul className="space-y-4">
